@@ -56,11 +56,13 @@
         android:hint="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:endIconMode="password_toggle"
         app:layout_constraintTop_toBottomOf="@+id/txtUsername">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -79,17 +81,18 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:textColor="@color/white"
+        android:layout_width="213dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
         android:background="@android:color/holo_blue_light"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
         android:text="@string/login"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblForgetPassword" />
 
@@ -97,9 +100,10 @@
         android:id="@+id/lblSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/purple_700"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:text="Signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
