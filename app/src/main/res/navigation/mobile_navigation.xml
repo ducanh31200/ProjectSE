@@ -24,8 +24,22 @@
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
+        android:id="@+id/nav_notify"
+        android:name="com.example.monitoring_app.ui.notify.NotifyFragment"
+        android:label="Notify"
+        tools:layout="@layout/fragment_notify" />
+
+    <fragment
+        android:id="@+id/nav_sent"
+        android:name="com.example.monitoring_app.ui.sent.SentFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_sent" />
+
+    <fragment
         android:id="@+id/nav_history"
         android:name="com.example.monitoring_app.ui.history.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history" />
+
+
 </navigation>

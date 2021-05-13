@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.monitoring_app">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +15,7 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.Monitoring_app.NoActionBar"></activity>
+            android:theme="@style/Theme.Monitoring_app.NoActionBar" />
         <activity android:name=".ForgottenPasswordActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".MainActivity">
