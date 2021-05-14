@@ -30,5 +30,9 @@
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_menu_send"
             android:title="History" />
+        <item
+            android:id="@+id/nav_changepassword"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Change Password" />
     </group>
 </menu>

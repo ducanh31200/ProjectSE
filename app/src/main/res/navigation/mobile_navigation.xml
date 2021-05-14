@@ -41,5 +41,11 @@
         android:label="History"
         tools:layout="@layout/fragment_history" />
 
+    <fragment
+        android:id="@+id/nav_changepassword"
+        android:name="com.example.monitoring_app.ui.changepassword.ChangePasswordFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history" />
+
 
 </navigation>
