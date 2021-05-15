@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.example.monitoring_app.R;
 import com.example.monitoring_app.ui.gallery.GalleryViewModel;
 import com.google.android.material.textfield.TextInputLayout;
@@ -23,12 +24,21 @@ public class ChangePasswordFragment extends Fragment {
     Button btnChange, btnCancelChangePwd;
     View root;
 
+    private AwesomeValidation awesomeValidation;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         root = inflater.inflate(R.layout.fragment_change_password, container, false);
 
         Mapping();
+
+        /*String regexPassword = "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}";
+        awesomeValidation.addValidation(getActivity(), R.id.txtOldPassword, regexPassword, R.string.err_password);
+        awesomeValidation.addValidation(getActivity(), R.id.txtNewPassword, regexPassword, R.string.err_password);
+        awesomeValidation.addValidation(getActivity(), R.id.txtNewPasswordAgain, R.id.txtNewPassword, R.string.err_password_confirmation);*/
+
+
         /*final TextView textView = root.findViewById(R.id.text_gallery);
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -40,7 +50,7 @@ public class ChangePasswordFragment extends Fragment {
     }
 
     private void Mapping() {
-        textInputLayoutNewPassword          = (TextInputLayout) root.findViewById(R.id.txtOldPassword);
+        textInputLayoutOldPassword          = (TextInputLayout) root.findViewById(R.id.txtOldPassword);
         textInputLayoutNewPassword          = (TextInputLayout) root.findViewById(R.id.txtNewPassword);
         textInputLayoutNewPasswordAgain     = (TextInputLayout) root.findViewById(R.id.txtNewPasswordAgain);
         btnChange                           = (Button) root.findViewById(R.id.btnChangePassword);

@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/nav_sent"
         android:name="com.example.monitoring_app.ui.sent.SentFragment"
-        android:label="History"
+        android:label="Sent"
         tools:layout="@layout/fragment_sent" />
 
     <fragment
@@ -42,9 +42,15 @@
         tools:layout="@layout/fragment_history" />
 
     <fragment
+        android:id="@+id/nav_account"
+        android:name="com.example.monitoring_app.ui.account.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+
+    <fragment
         android:id="@+id/nav_changepassword"
         android:name="com.example.monitoring_app.ui.changepassword.ChangePasswordFragment"
-        android:label="History"
+        android:label="Change Password"
         tools:layout="@layout/fragment_history" />
 
 

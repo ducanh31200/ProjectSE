@@ -6,10 +6,10 @@ public class History {
     private int Id;
     private String Title;
     private String Description;
-    private Date CreatedDate;
+    private String CreatedDate;
     private Boolean Status;
 
-    public History(int id, String title, String description, Date createdDate, Boolean status) {
+    public History(int id, String title, String description, String createdDate, Boolean status) {
         Id = id;
         Title = title;
         Description = description;
@@ -41,11 +41,11 @@ public class History {
         Description = description;
     }
 
-    public Date getCreatedDate() {
+    public String getCreatedDate() {
         return CreatedDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(String createdDate) {
         CreatedDate = createdDate;
     }
 
