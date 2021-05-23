@@ -22,9 +22,9 @@
             android:icon="@android:drawable/ic_popup_reminder"
             android:title="Notify" />
         <item
-            android:id="@+id/nav_sent"
+            android:id="@+id/nav_monitor"
             android:icon="@drawable/ic_menu_send"
-            android:title="Sent" />
+            android:title="Monitor" />
 
         <item
             android:id="@+id/nav_history"
