@@ -23,10 +23,11 @@ public class NotifyAdapter extends BaseAdapter {
     private List<Notify> notifyList;
     NotifyFragment notifyFragment = new NotifyFragment();
 
-    public NotifyAdapter(Context context, int layout, List<Notify> notifyList) {
+    public NotifyAdapter(Context context, int layout, List<Notify> notifyList, NotifyFragment notifyFragment) {
         this.context = context;
         this.layout = layout;
         this.notifyList = notifyList;
+        this.notifyFragment = notifyFragment;
     }
 
     @Override
@@ -80,13 +81,15 @@ public class NotifyAdapter extends BaseAdapter {
                 //Intent intent = new Intent(context, UpdateStudentActivity.class);
                 ////intent.putExtra("dataSV", sinhVien);
                 //context.startActivity(intent);
+                notifyFragment.EditNotify(notify.getId(), notify.getTitle(), notify.getDescription(), notify.getStatus(), position);
             }
         });
 
         holder.imgDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                XacNhanXoa(notify.getTitle(), notify.getId());
+                //XacNhanXoa(notify.getTitle(), notify.getId());
+                notifyFragment.DeleteNotify(position);
             }
         });
 

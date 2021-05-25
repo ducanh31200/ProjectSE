@@ -12,18 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.monitoring_app.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.monitoring_app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
         android:id="@+id/nav_notify"
         android:name="com.example.monitoring_app.ui.notify.NotifyFragment"
         android:label="Notify"
@@ -31,9 +19,9 @@
 
     <fragment
         android:id="@+id/nav_monitor"
-        android:name="com.example.monitoring_app.ui.sent.SentFragment"
+        android:name="com.example.monitoring_app.ui.monitor.MonitorFragment"
         android:label="Monitor"
-        tools:layout="@layout/fragment_sent" />
+        tools:layout="@layout/fragment_monitor" />
 
     <fragment
         android:id="@+id/nav_history"

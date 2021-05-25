@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,13 +16,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.example.monitoring_app.R;
-import com.example.monitoring_app.ui.gallery.GalleryViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class ChangePasswordFragment extends Fragment {
 
-    TextInputLayout textInputLayoutOldPassword, textInputLayoutNewPassword, textInputLayoutNewPasswordAgain;
-    Button btnChange, btnCancelChangePwd;
+    EditText currentPwd, newPwd, RePwd;
+    Button btnChange, btnNotChange;
     View root;
 
     private AwesomeValidation awesomeValidation;
@@ -31,7 +31,7 @@ public class ChangePasswordFragment extends Fragment {
 
         root = inflater.inflate(R.layout.fragment_change_password, container, false);
 
-        Mapping();
+        //Mapping();
 
         /*String regexPassword = "(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])(?=.*[~`!@#\\$%\\^&\\*\\(\\)\\-_\\+=\\{\\}\\[\\]\\|\\;:\"<>,./\\?]).{8,}";
         awesomeValidation.addValidation(getActivity(), R.id.txtOldPassword, regexPassword, R.string.err_password);
@@ -50,10 +50,6 @@ public class ChangePasswordFragment extends Fragment {
     }
 
     private void Mapping() {
-        textInputLayoutOldPassword          = (TextInputLayout) root.findViewById(R.id.txtOldPassword);
-        textInputLayoutNewPassword          = (TextInputLayout) root.findViewById(R.id.txtNewPassword);
-        textInputLayoutNewPasswordAgain     = (TextInputLayout) root.findViewById(R.id.txtNewPasswordAgain);
-        btnChange                           = (Button) root.findViewById(R.id.btnChangePassword);
-        btnCancelChangePwd                  = (Button) root.findViewById(R.id.btnCancelChangePwd);
+
     }
 }

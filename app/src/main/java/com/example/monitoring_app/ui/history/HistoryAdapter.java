@@ -18,11 +18,13 @@ public class HistoryAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private List<History> historyList;
+    private HistoryFragment historyFragment;
 
-    public HistoryAdapter(Context context, int layout, List<History> historyList) {
+    public HistoryAdapter(Context context, int layout, List<History> historyList, HistoryFragment historyFragment) {
         this.context = context;
         this.layout = layout;
         this.historyList = historyList;
+        this.historyFragment = historyFragment;
     }
 
     @Override
@@ -83,6 +85,7 @@ public class HistoryAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 //XacNhanXoa(notify.getTitle(), notify.getId());
+                historyFragment.DeleteHistory(position);
             }
         });
 
