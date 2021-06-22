@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private  void Mapping() {
-        textInputLayoutEmail     = (TextInputLayout) findViewById(R.id.txtEmail);
+        textInputLayoutEmail        = (TextInputLayout) findViewById(R.id.txtEmail);
         textInputLayoutPassword     = (TextInputLayout) findViewById(R.id.txtPassword);
         btnLogin                    = (Button) findViewById(R.id.btnLogin);
         lblForgotPassword           = (TextView) findViewById(R.id.lblForgetPassword);
