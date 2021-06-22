@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         tv_email.setText(account.getMail());
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home,  R.id.nav_notify, R.id.nav_physical, R.id.nav_account, R.id.nav_changepassword)
+                R.id.nav_home,  R.id.nav_notify, R.id.nav_physical, R.id.nav_account, R.id.nav_changepassword,R.id.nav_Advice,R.id.nav_Game)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -93,6 +93,7 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.action_Logout) {
             startActivity(new Intent(HomeActivity.this, MainActivity.class));
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

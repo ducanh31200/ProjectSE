@@ -3,6 +3,7 @@ package com.example.monitoring_app.ui.physical;
 import android.app.Dialog;
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,9 @@ import android.content.DialogInterface;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,11 +56,54 @@ public class HistoryFragment extends Fragment {
                     presenter.addPhysical(edtTitle.getText().toString(),edtAge.getText().toString(),
                             edtHeight.getText().toString(),edtWeight.getText().toString());
                     //NotifyManager.getInstance().addNotify(edtxtTitle.getText().toString(),edtxtTime.getText().toString());
+                    double Height = Double.parseDouble( edtHeight.getText().toString());
+                    double weight = Double.parseDouble( edtWeight.getText().toString());
+                    Log.i("Cao nang",Height+" " + weight+"");
+                    double BMI = weight/(Height*2);
                     adapter.notifyDataSetChanged();
                     edtTitle.setText("");
                     edtAge.setText("");
                     edtHeight.setText("");
                     edtWeight.setText("");
+                    // dialog ở đây
+
+
+                    Dialog AdviceDialog = new Dialog(root.getContext());
+                    AdviceDialog.setContentView(R.layout.dialog_advice);
+                    AdviceDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+                    AdviceDialog.setCancelable(false);
+                    ImageView img = AdviceDialog.findViewById(R.id.img_advice);
+                    TextView tv_BMI = AdviceDialog.findViewById(R.id.textView_BMI);
+                    TextView tv_Advice = AdviceDialog.findViewById(R.id.textView_Advice);
+                    Button btn_OK = AdviceDialog.findViewById(R.id.button_OK);
+                    tv_BMI.setText("BMI: " + BMI);
+                    if(BMI<18.5)
+                    {
+                        tv_Advice.setText("Lời khuyên: Bé quá gầy rồi hãy cho bé uống\n Vitamin và ăn đầy đủ nghe!");
+                    }
+                    else if(BMI>=18.5 && BMI <= 22.9)
+                    {
+                        img.setImageResource(R.drawable.embeth);
+                        tv_Advice.setText("Lời khuyên: Rất tốt bé có một thân hình lý tưởng\nHãy cho bé luyện tập thể thao thêm nhé");
+                    }
+                    else if(BMI>=23 && BMI <=24.9)
+                    {
+                        img.setImageResource(R.drawable.tangcan);
+                        tv_Advice.setText("Lời khuyên: Bé đang có nguy cơ tăng cân\nHãy cho bé luyện tập thể dục và ăn uống điều độ");
+                    }
+                    else if(BMI >24.9)
+                    {
+                        img.setImageResource(R.drawable.bebeophi);
+                        tv_Advice.setText("Lời khuyên: Bé đang bị béo phì\nHãy thường xuyên vận động và giảm khẩu phần ăn nhé\nTránh ăn những đồ ngọt");
+                    }
+                    btn_OK.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AdviceDialog.dismiss();
+                        }
+                    });
+                    AdviceDialog.show();
+
                 }
                 else
                 {

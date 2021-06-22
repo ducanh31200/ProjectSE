@@ -69,7 +69,7 @@ public class PhysicalAdapter extends BaseAdapter {
         Physical physical = physicalList.get(position);
         holder.txtTitle.setText(physical.getTitle());
         holder.txtAge.setText("Tuổi:"+physical.getAge());
-        holder.txtHeight.setText("Chiều cao:"+physical.getHeight()+"cm");
+        holder.txtHeight.setText("Chiều cao:"+physical.getHeight()+"m");
         holder.txtWeight.setText("Cân nặng:"+physical.getWeight()+"Kg");
 
         // event update & delete

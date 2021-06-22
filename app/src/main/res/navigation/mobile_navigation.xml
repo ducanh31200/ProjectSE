@@ -34,6 +34,17 @@
         android:name="com.example.monitoring_app.ui.changepassword.ChangePasswordFragment"
         android:label="Change Password"
         tools:layout="@layout/fragment_physical" />
+    <fragment
+        android:id="@+id/nav_Advice"
+        android:name="com.example.monitoring_app.ui.advice.AdviceFragment"
+        android:label="Advice"
+        tools:layout="@layout/fragment_advice" />
+    <fragment
+        android:id="@+id/nav_Game"
+        android:name="com.example.monitoring_app.ui.game.GameFragment"
+        android:label="Advice"
+        tools:layout="@layout/fragment_game" />
+
 
 
 </navigation>
